@@ -2,58 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import faker from 'faker';
 
+import CommentDetails from './CommentDetails';
+
 const App = () => {
  return(
    <div className='ui container comments'>
-
-     {/*-- first comment --*/}
-     <div className='comment'>
-       <a href='/' className='avatar'>
-         <img alt='avatar' src={faker.image.avatar()} />
-       </a>
-       <div className='content'>
-         <a href='/' className='author'>
-           Sam
-         </a>
-         <div className='metadata'>
-           <span className='date'>Today at 6:00PM</span>
-         </div>
-         <div className='text'>Nice blog post</div>
-       </div>
-     </div>
-
-     {/*-- second comment --*/}
-     <div className='comment'>
-       <a href='/' className='avatar'>
-         <img alt='avatar' src={faker.image.avatar()} />
-       </a>
-       <div className='content'>
-         <a href='/' className='author'>
-           Sam
-         </a>
-         <div className='metadata'>
-           <span className='date'>Today at 6:00PM</span>
-         </div>
-         <div className='text'>Nice blog post</div>
-       </div>
-     </div>
-
-     {/*-- third comment --*/}
-     <div className='comment'>
-       <a href='/' className='avatar'>
-         <img alt='avatar' src={faker.image.avatar()} />
-       </a>
-       <div className='content'>
-         <a href='/' className='author'>
-           Sam
-         </a>
-         <div className='metadata'>
-           <span className='date'>Today at 6:00PM</span>
-         </div>
-         <div className='text'>Nice blog post</div>
-       </div>
-     </div>
-
+     <CommentDetails
+       author="Sam"
+       time="Today at 6:00PM"
+       content="Nice blog post"
+       avatar={faker.image.avatar()}
+     />
+     <CommentDetails
+       author="Jane"
+       time="Yesterday at 8:36PM"
+       content="I like this post very much"
+       avatar={faker.image.avatar()}
+     />
+     <CommentDetails
+       author="Max"
+       time="Today at 10:00AM"
+       content="Very nice post"
+       avatar={faker.image.avatar()}
+     />
    </div>
  );
 };
